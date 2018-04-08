@@ -1,6 +1,23 @@
 <template>
   <div>
-      <h1>这里是首页</h1>
+    <div class="header">
+      <h1 class="header-title">在"创世纪城"中挑选你的梦想领地</h1>
+      <p style="color:#8f9199;">去中心化虚拟土地市场。免交易费。</p>
+      <router-link to="" class="toNow">现在就开始</router-link>
+    </div>
+    <div class="nav">
+      <div class="nav-top">
+        <h3>最新上架虚拟土地</h3>
+        <router-link to="">
+          <span role="button">查看更多&nbsp;></span>
+        </router-link>
+      </div>
+      <div class="nav-content">
+        <router-link to="" class="nav-box">
+          这里是拍卖条目
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,8 +25,7 @@
 export default {
   name: 'Index',
   data () {
-    return {
-      
+    return {    
     }
   }
 }
@@ -20,8 +36,47 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
-a {
-  color: #42b983;
+a{
+  text-decoration: none;
 }
+.header::before{
+  content: ' ';width: 0;height: 0;display: table;
+}
+.header{
+  width: 100%;height: 500px;
+  background: #151823 url(../../assets/img/home-bg.png) 0 center no-repeat;
+  background-size: 100%;
+}
+.header-title{
+  margin-top: 80px;color: white;
+}
+.toNow{
+  display: inline-block;width: 125px;height: 42px;text-align: center;color: white;
+  background: #ff4130;border-radius: 10px; line-height: 42px;
+}
+
+.nav::before{
+  content: ' ';width: 0;height: 0;display: table;
+}
+.nav{
+  width: 100%;height: 320px;background: #151823;
+}
+.nav-top{
+  width: 1180px;height: 50px;margin:0 auto;color: white;line-height: 50px;
+}
+.nav-top>h3{
+  float: left; font-weight: 400;margin: 0;margin-left: 50px;
+}
+.nav-top>a{
+  float: right;color: #ff4130;
+}
+
+.nav-content{
+  height: 230px;width: 1180px;margin: 0 auto;
+}
+a.nav-box{
+  float: left;width: 220px;height: 220px;background: #2e3447;
+  margin-left: 50px;color: white;
+}
+
 </style>
