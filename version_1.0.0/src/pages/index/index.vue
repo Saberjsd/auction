@@ -13,8 +13,10 @@
         </router-link>
       </div>
       <div class="nav-content">
-        <router-link to="" class="nav-box">
-          这里是拍卖条目
+        <router-link to="detail" class="nav-box">
+          <div class="box-img">
+            <img src="http://api.map.baidu.com/staticimage/v2?ak=F2oOX8uxAEObmO430kX60nsQNiipp6N7&center=-73.861641,40.885714&width=220&height=150&zoom=13" alt="">            
+          </div>
         </router-link>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">  
+  <div class="container" style="margin-top:100px;">  
 
     <el-form :model="loginForm"  ref="loginForm" :rules="rules" label-width="100px" class="loginForm">
       <el-form-item label="用户名" prop="username">
