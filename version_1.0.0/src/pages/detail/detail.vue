@@ -23,6 +23,7 @@ a{text-decoration: none;}
 .infoWindow{
   position: absolute;left: 30px;top: 140px;background:rgba(255,255,255,0.8);
   width: 200px;height: 300px;
+  font-size: 12px;
 }
 .infoClose{
   width: 30px;height: 30px;border-radius: 50%;box-shadow: 1px 2px 2px #666;
@@ -77,7 +78,7 @@ export default {
       map.addOverlay(polygon); 
 
     },
-    
+
     infoClose:function(){
       this.inforWindowShow=false;
     }
