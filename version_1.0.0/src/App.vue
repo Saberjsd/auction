@@ -6,10 +6,10 @@
 
 <script>
 import Vue from "vue";
-import Element from "element-ui";
-import "element-ui/lib/theme-default/index.css";
+// import Element from "element-ui";
+// import "element-ui/lib/theme-chalk/index.css";
 
-Vue.use(Element);
+// Vue.use(Element);
 
 export default {
   name: "App"
@@ -27,6 +27,15 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+}
+/* 登录遮罩 */
+.el-loading-mask{
+  background-color: rgba(0 ,0 ,0 ,.3) !important;
+}
+.el-loading-mask p{
+  color: white !important;
+}
+.el-loading-mask .path {
+  stroke:white !important;
 }
 </style>

@@ -9,7 +9,9 @@
         <el-input type="password" v-model="loginForm.passwd" auto-complete="off"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('loginForm')" class="loginBtn">提交</el-button>
+        <el-button type="primary" @click="submitForm('loginForm')" 
+        class="loginBtn" v-loading.fullscreen.lock="fullscreenLoading"
+        element-loading-text="正在登录...">登录</el-button>
       </el-form-item>
     </el-form>
     
@@ -48,15 +50,31 @@ export default {
         passwd:[
           { validator: validatePasswd, trigger: 'blur' }
         ]
-      }
+      },
+      fullscreenLoading: false
     }
   },
   methods:{
     submitForm:function(formName){
+      console.log(this);
       this.$refs[formName].validate((valid) => {
-        if (valid) {
-          //页面跳转
-          this.$router.push({ path: 'index' })
+        if (valid) { //前端验证合法之后
+            this.fullscreenLoading = true;
+            setTimeout(() => {
+              this.fullscreenLoading = false;
+              this.$message({
+                showClose: true,
+                message: '啊哦,登录出错了..请稍后重试!',
+                type: 'error'
+              });
+              
+            }, 3000);
+            
+            setTimeout(() => {
+              //页面跳转
+              this.$router.push({ path: 'index' })
+            },5000)
+   
           // this.$http.get('/index').then((res) => {
 
           // }).then((err) => {

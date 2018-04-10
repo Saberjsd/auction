@@ -3,7 +3,7 @@
     <div class="header">
       <h1 class="header-title">在"创世纪城"中挑选你的梦想领地</h1>
       <p style="color:#8f9199;">去中心化虚拟土地市场。免交易费。</p>
-      <router-link to="" class="toNow">现在就开始</router-link>
+      <router-link to="auction_map" class="toNow">现在就开始</router-link>
     </div>
     <div class="nav">
       <div class="nav-top">
@@ -16,6 +16,11 @@
         <router-link to="detail" class="nav-box">
           <div class="box-img">
             <img src="http://api.map.baidu.com/staticimage/v2?ak=F2oOX8uxAEObmO430kX60nsQNiipp6N7&center=-73.861641,40.885714&width=220&height=150&zoom=13" alt="">            
+          </div>
+        </router-link>
+        <router-link to="detail" class="nav-box">
+          <div class="box-img">
+            <img src="http://api.map.baidu.com/staticimage/v2?ak=F2oOX8uxAEObmO430kX60nsQNiipp6N7&width=220&height=150&center=-73.857482,40.888277&zoom=16&paths=-73.85962,40.88915;-73.856844,40.888277;-73.857203,40.887623;-73.85997,40.888509;&pathStyles=0x000fff,2,0.5,0xff0000" alt="">            
           </div>
         </router-link>
       </div>
@@ -46,7 +51,7 @@ a{
 }
 .header{
   width: 100%;height: 500px;
-  background: #151823 url(../../assets/img/home-bg.png) 0 center no-repeat;
+  background: #151823 url(~img/home-bg.png) 0 center no-repeat;
   background-size: 100%;
 }
 .header-title{
