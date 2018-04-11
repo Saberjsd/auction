@@ -26,14 +26,13 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    // modules: [path.join(__dirname,'../node_modules')],
+    modules: [path.join(__dirname,'../node_modules')],
     extensions: ['.js', '.vue', '.json'],
     
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'img': resolve('src/assets/img'),
-      'icon': resolve('src/assets/icon')
+      'assets': resolve('src/assets'),
     }
   },
   module: {
