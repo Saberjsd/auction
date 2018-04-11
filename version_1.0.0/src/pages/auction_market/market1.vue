@@ -4,7 +4,7 @@
 
         </Headers>
         
-        <button @click="fun">点击改变msg</button>
+        <button @click="fun">marke1</button>
         <br>
         msg:{{msg}}
     </div>
@@ -19,13 +19,13 @@ ul,li{list-style: none;}
 
 <script>
 import Headers from '@/components/header'
-import {mapActions,mapGetters} from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
-  name: 'auction_market',
+  name: 'market1',
   data () {
     return {
-        name:'marke'
+        name:'marke1'
     }  
   },
   components:{
@@ -33,10 +33,8 @@ export default {
   },
   computed:{
       ...mapGetters(['msg'])
-  },
-  methods:{
-      ...mapActions(['fun'])
   }
+  
 }
 </script>
 
