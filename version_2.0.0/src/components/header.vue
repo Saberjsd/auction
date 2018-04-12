@@ -10,13 +10,13 @@
     <div class="header-right">
       <a href="" class="exit">
         <span>退出</span>
-        <img src="~assets/icons/icon-exit.png">
+        <i></i>
       </a>
       <div class="span"></div>
       <div class="remainder-refresh">
         余额:
-        <span class="remainder"><i>1000</i>DDC</span>
-        <a href=""><img src="~assets/icons/icon-refresh.png"></a>
+        <span class="remainder"><i>1000</i> DDC</span>
+        <a href=""></a>
       </div>
       <div class="span"></div>
       <div class="user-info">
@@ -43,7 +43,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .index-header{
-  width: 100%;height: 60px;background: #ffffff;line-height: 60px;box-shadow: 0px 0px 10px 3px #ebebeb;
+  width: 100%;height: 60px;background: #ffffff;line-height: 60px;
+  box-shadow: 0px 0px 10px 3px #ebebeb;z-index: 100;
 }
 .index-header-logo{
   height: 60px;width: 320px;background: #4284f7;float: left;
@@ -59,7 +60,7 @@ export default {
 }
 /* 右部 */
 .header-right{
-  float: right;height: 60px;color: #666;width: 520px;
+  float: right;height: 60px;color: #666;width: 564px;
 }
 .header-right>a,.header-right>div{
   float: right;color: #666;
@@ -67,18 +68,43 @@ export default {
 .span{
   float: right;width: 1px;height: 30px;background-color: #c5c5c5;margin: 15px 20px;
 }
+.remainder-refresh{
+  width: 170px;text-align: left;height: 60px;
+}
+.remainder-refresh a{
+  position: relative;left: 12px;top:3px;width: 22px;height: 17px;display: inline-block;
+  background: url('~assets/icons/icon-refresh.png') no-repeat;
+}.remainder-refresh a:hover{
+  background-image: url('~assets/icons/icon-refresh-hover.png')
+}
+.remainder{
+  color: #ff966d;
+}
+.remainder i{font-style: normal;}
+.remainder img{padding-left: 15px;}
 
 .exit{
   margin-right: 60px;width: 75px;
 }
-.exit img{
-  position: absolute;top: 21px;float: right;
+.exit i{
+  position: absolute;top: 21px;float: right;width: 17px;height: 18px;
+  background: url('~assets/icons/icon-exit.png') no-repeat;
+}
+.exit:hover i{
+  background-image: url('~assets/icons/icon-exit-hover.png')
 }
 .exit span{
   float: left;
 }
+
+.exit:hover span{
+  color: #4284f7;
+}
 .user-info{
   float: right;
+}
+.user-info span{
+  color: #ff966d;
 }
 
 </style>

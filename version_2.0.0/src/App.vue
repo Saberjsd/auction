@@ -40,6 +40,6 @@ a:hover { text-decoration: none; }
   color: #2c3e50;
 }
 
-
+body,html,.app{width: 100%;height: 100%;}
 
 </style>
