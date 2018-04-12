@@ -1,75 +1,118 @@
-.header{
-    height: 60px;width: 100%;background: #1253fc;line-height: 60px;color: #ffffff;
-  }
-  .header-logo{
-  height: 60px;width: 1200px;margin: 0 auto;
-  }
-  .header-logo img{
-  float: left;
-  margin: 9px;
-  }
-  .header-logo span{
-  float: left;
-  font-family: Arial-Black;font-size: 18px;font-weight: bold;
-  }
-  /* content */
-  .content{
-  width: 1200px;margin: 0 auto;
-  }
-  .login-text{
-  font-family: MicrosoftYaHeiUI-Bold;font-size: 40px;color: #2f2f2f;
-  text-align: left;padding: 80px 0 61px 0;
-  }
-  
-  .loginForm{
-  width: 522px;
-  float: left;
-  }
-  .loginBtn{
-  width: 522px;height: 73px;border-radius: 5px;font-family: MicrosoftYaHeiUI;
-  font-size: 32px;color: #ffffff;
-  background: url('~assets/img/login-btn-bg.png') no-repeat;
-  }
-  .loginBtn:link{background: url('~assets/img/login-btn-bg.png') no-repeat}
-  .loginBtn:visited{background: url('~assets/img/login-btn-bg.png') no-repeat}
-  .loginBtn:hover{background: url('~assets/img/login-btn-bg.png') no-repeat}
-  .loginBtn:active{background: url('~assets/img/login-btn-bg.png') no-repeat}
-  /* 间距 */
-  .el-form-item{
-    height: 73px;margin-bottom: 40px;
-  }
-  .el-form-item__error{
-    font-size: 18px;padding-top: 8px;
-  }
-  .el-input__inner{
-  height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
-  border: 1px solid #a5a5a5;text-indent: 2em;
-  }
-  .input-code{width: 300px;float: left;}
-  .img-code{width: 206px;height: 73px;border-radius: 5px;float: right;}
-  .el-form-item{
-    position: relative;
-  }
-  .icon-input{
-    position: absolute;height: 28px;top: 22px;left: 20px;z-index: 30;
-  }
-  .icon-input.username{
-    width: 23px;
-  }
-  .icon-input.passwd{
-    width: 24px;
-  }
-  .icon-input.code{
-    width: 20px;left: 22px;
-  }
-  
-  /* 登录遮罩 */
-  .el-loading-mask{
-    background-color: rgba(0 ,0 ,0 ,.3) !important;
-  }
-  .el-loading-mask p{
-    color: white !important;
-  }
-  .el-loading-mask .path {
-    stroke:white !important;
-  }
+body{font-size:18px;}
+.login-header{
+  height: 60px;width: 100%;background: #4284f7;line-height: 60px;color: #ffffff;
+}
+.login-header-logo{
+height: 60px;width: 1200px;margin: 0 auto;
+}
+.login-header-logo img{
+float: left;
+margin: 9px;
+}
+.login-header-logo a{color:#ffffff;}
+.login-header-logo span{
+float: left;
+font-family: Arial-Black;font-size: 18px;font-weight: bold;
+}
+/* content */
+.content,footer{
+width: 1200px;margin: 0 auto;
+}
+.content::after{
+  content: '';display: table;width: 0;height: 0;clear: both;
+}
+.login-text{
+font-size: 40px;color: #2f2f2f;font-weight: 600;
+text-align: left;padding: 80px 0 61px 0;
+}
+
+.loginForm{
+width: 522px;
+float: left;
+}
+.loginBtn{
+width: 522px;height: 73px;border-radius: 5px;border: none;outline: none;
+font-size: 32px;color: #ffffff;cursor: pointer;
+background: url('../img/login-btn-bg.png') no-repeat;
+}
+
+/* 间距 */
+.el-form-item{
+  height: 73px;margin-bottom: 40px;
+}
+.el-form-item__error{
+  font-size: 18px;padding-top: 8px;
+}
+.el-input__inner{
+height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
+border: 1px solid #a5a5a5;text-indent: 2em;
+}
+.input-code{width: 300px;float: left;}
+.img-code{width: 206px;height: 73px;border-radius: 5px;float: right;}
+.el-form-item{
+  position: relative;
+}
+.icon-input{
+  position: absolute;height: 28px;top: 22px;left: 20px;z-index: 30;
+}
+.icon-input.username{
+  width: 23px;
+}
+.icon-input.passwd{
+  width: 24px;
+}
+.icon-input.code{
+  width: 20px;left: 22px;
+}
+/* 左边结束 */
+/* 右边开始 */
+.content-right{
+  float: right;width: 384px;
+}
+.content-right::after{
+  content: '';display: table;width: 0;height: 0;clear: both;
+}
+.content-right p{
+  text-align: left;
+}
+.content-right .questions{
+  font-size: 24px;color: #868686;height: 24px;
+  line-height: 24px;margin-bottom: 20px;
+}
+.content-right .questions i{
+  width: 10px;height: 10px;background: #ff966d;border-radius: 50%;
+  margin-right: 15px;display: inline-block;
+}
+.content-right .dec{
+  font-size: 22px;color: #a5a5a5;font-weight: 200;
+  padding-left: 25px;
+}
+.code-download{
+  width: 160px;float: left;margin-top: 60px;
+}
+.code-download span{
+  font-weight: 200;color: #a5a5a5;
+  position: relative;top: 10px;
+}
+.code-download img:last-child{
+  position: relative;top: 15px;
+}
+
+/* 登录遮罩 */
+.el-loading-mask{
+  background-color: rgba(0 ,0 ,0 ,.3) ;
+}
+.el-loading-mask p{
+  color: white !important;
+}
+.el-loading-mask .path {
+  stroke:white ;
+}
+
+footer{
+  margin-top:40px;padding-top:11px;text-align:right;color:#a5a5a5;
+  background: url('../img/login-bottom.png') left top no-repeat;
+}
+footer a{
+  color:#a5a5a5;text-decoration:none;
+}

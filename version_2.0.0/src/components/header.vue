@@ -1,24 +1,40 @@
 <template>
-  <div class="header">
-    <router-link to="index"><h3 class="header-title">首页LOGO</h3></router-link>
-    <ul class="nav">
-      <li :class="{active:isActive}" @click="isActive = true">
-        <router-link to="auction_map">地图总览</router-link>
-      </li>
-      <li :class="{active:!isActive}" @click="isActive = false">
-        <router-link to="auction_market">拍卖市场</router-link>
-      </li>
-    </ul>
-    <!-- <h3 class="login">登陆</h3>  -->
+  <div class="index-header">
+    <div class="index-header-logo">
+      <a href="#/index">
+          <img src="~assets/img/logo.png" alt="">
+          <span>DREAM WORLD</span>
+      </a>  
+    </div>
+
+    <div class="header-right">
+      <a href="" class="exit">
+        <span>退出</span>
+        <img src="~assets/icons/icon-exit.png">
+      </a>
+      <div class="span"></div>
+      <div class="remainder-refresh">
+        余额:
+        <span class="remainder"><i>1000</i>DDC</span>
+        <a href=""><img src="~assets/icons/icon-refresh.png"></a>
+      </div>
+      <div class="span"></div>
+      <div class="user-info">
+        HELLO,
+        <span>183****4512</span>
+      </div>
+    </div> 
+
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HeaderComponent',
+  name: 'Headers',
   data () {
     return { 
-      isActive:true   
+       
     }
   }
 }
@@ -26,29 +42,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-a{text-decoration: none;color: #8f9199;}
-ul,li{list-style: none;}
-.header{
-  width: 100%;height: 95px;background: #151823;line-height: 95px;
+.index-header{
+  width: 100%;height: 60px;background: #ffffff;line-height: 60px;box-shadow: 0px 0px 10px 3px #ebebeb;
 }
-.header-title{
-  color: white;font-weight: normal;float: left;margin: 0 0 0 15px;
+.index-header-logo{
+  height: 60px;width: 320px;background: #4284f7;float: left;
 }
-/* .login{font-weight: normal;float: right;margin: 0;} */
-.nav:after{content: '';width: 0;height: 0;display: table;clear: both;}
-.nav{
-  margin: 0 auto;width: 300px;padding: 0;height: 100%;
-  display: flex;align-items: center;justify-content: space-around;
+.index-header-logo img{
+  float: left;
+  margin: 9px 12px 9px 0px;
 }
-.nav li a{
-  height: 30px;line-height: 30px;padding: 10px 15px;border-radius: 30px;
+.index-header-logo a{color:#ffffff;display: inline-block;}
+.index-header-logo span{
+  float: right;
+  font-family: Arial-Black;font-size: 18px;font-weight:bold;
 }
-.nav li:hover a{
-  background: #ff4130;color: white !important;
+/* 右部 */
+.header-right{
+  float: right;height: 60px;color: #666;width: 520px;
 }
-.nav li.active a{
-  background: #ff4130;color: white !important;
+.header-right>a,.header-right>div{
+  float: right;color: #666;
+}
+.span{
+  float: right;width: 1px;height: 30px;background-color: #c5c5c5;margin: 15px 20px;
 }
 
+.exit{
+  margin-right: 60px;width: 75px;
+}
+.exit img{
+  position: absolute;top: 21px;float: right;
+}
+.exit span{
+  float: left;
+}
+.user-info{
+  float: right;
+}
 
 </style>
