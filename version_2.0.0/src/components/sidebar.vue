@@ -38,19 +38,20 @@ export default {
 
 <style scoped>
 .sidebar{
-  float: left;width: 320px;position: absolute;top: 0; height: 100%;
+  float: left;width: 260px;position: absolute;top: 0; height: calc(100% - 60px);margin-top: 60px;
+  background-color: #ffffff;box-shadow: 0px 6px 10px 3px #ebebeb;
 }
 .sidebar-ul{
-  margin-top: 120px;font-size: 24px;
+  margin-top: 75px;font-size: 24px;
 }
 .sidebar-ul li{
   height: 80px;line-height: 80px;
 }
 .sidebar-ul li a{color: #848484;height: 80px;line-height: 80px;display: inline-block;width: 100%;}
-.sidebar-ul li:nth-of-type(1) a{ background: url('~assets/icons/icon-siderbar-a.png') 68px center no-repeat;}
-.sidebar-ul li:nth-of-type(2) a{ background: url('~assets/icons/icon-siderbar-b.png') 68px center no-repeat;}
-.sidebar-ul li:nth-of-type(3) a{ background: url('~assets/icons/icon-siderbar-c.png') 68px center no-repeat;}
-.sidebar-ul li:nth-of-type(4) a{ background: url('~assets/icons/icon-siderbar-d.png') 68px center no-repeat;}
+.sidebar-ul li:nth-of-type(1) a{ background: url('~assets/icons/icon-siderbar-a.png') 44px center no-repeat;}
+.sidebar-ul li:nth-of-type(2) a{ background: url('~assets/icons/icon-siderbar-b.png') 44px center no-repeat;}
+.sidebar-ul li:nth-of-type(3) a{ background: url('~assets/icons/icon-siderbar-c.png') 44px center no-repeat;}
+.sidebar-ul li:nth-of-type(4) a{ background: url('~assets/icons/icon-siderbar-d.png') 44px center no-repeat;}
 .sidebar-ul li i{float: left;width: 8px;height: 80px;background-color: #ffffff}
 /* .sidebar-ul li:hover i{background-color: #4284f7} */
 .sidebar-ul li:nth-of-type(1):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-a-hover.png')}

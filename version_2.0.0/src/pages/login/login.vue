@@ -16,7 +16,7 @@
         <el-form :model="loginForm"  ref="loginForm" :rules="rules" class="loginForm">
           <el-form-item  prop="username">
             <img src="~assets/icons/icon-username.png" class="icon-input username">
-            <el-input type="text" v-model="loginForm.username" placeholder="请输入您的手机号码" auto-complete="off"></el-input>
+            <el-input type="text" v-model="loginForm.username"  placeholder="请输入您的手机号码" auto-complete="off"></el-input>
           </el-form-item>
           <el-form-item  prop="passwd">
             <img src="~assets/icons/icon-passwd.png" class="icon-input passwd">

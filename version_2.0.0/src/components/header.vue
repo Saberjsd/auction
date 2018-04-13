@@ -44,10 +44,10 @@ export default {
 <style scoped>
 .index-header{
   width: 100%;height: 60px;background: #ffffff;line-height: 60px;
-  box-shadow: 0px 0px 10px 3px #ebebeb;z-index: 100;
+  box-shadow: 0px 0px 10px 4px #ebebeb;z-index: 10000;float: left;
 }
 .index-header-logo{
-  height: 60px;width: 320px;background: #4284f7;float: left;
+  height: 60px;width: 260px;background: #4284f7;float: left;
 }
 .index-header-logo img{
   float: left;

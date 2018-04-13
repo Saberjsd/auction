@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal;}
 /** 重置列表元素 **/
 ul, ol { list-style: none; }
 /** 重置文本格式元素 **/
+ul,li{list-style: none;}
 a { text-decoration: none; }
 a:hover { text-decoration: none; }
 .app {

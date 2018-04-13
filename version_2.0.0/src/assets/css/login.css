@@ -37,19 +37,19 @@ background: url('../img/login-btn-bg.png') no-repeat;
 }
 
 /* 间距 */
-.el-form-item{
+.loginForm .el-form-item{
   height: 73px;margin-bottom: 40px;
 }
-.el-form-item__error{
+.loginForm .el-form-item__error{
   font-size: 18px;padding-top: 8px;
 }
-.el-input__inner{
+.loginForm .el-input__inner{
 height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
 border: 1px solid #a5a5a5;text-indent: 2em;
 }
 .input-code{width: 300px;float: left;}
 .img-code{width: 206px;height: 73px;border-radius: 5px;float: right;}
-.el-form-item{
+.loginForm .el-form-item{
   position: relative;
 }
 .icon-input{
