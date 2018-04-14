@@ -27,10 +27,9 @@
             <el-input type="text" v-model="loginForm.code" class="input-code" placeholder="请输入右侧验证码" auto-complete="off"></el-input>
             <img src="http://iph.href.lu/206x73" class="img-code">
           </el-form-item>
+
           <el-form-item>
-            <button type="button"  @click="submitForm('loginForm')" 
-            class="loginBtn" v-loading.fullscreen.lock="fullscreenLoading"
-            element-loading-text="正在登录...">立即登录</button>
+            <button type="button" @click="submitForm('loginForm')" class="loginBtn" >立即登录</button>
           </el-form-item>
         </el-form>
       </div>
@@ -54,6 +53,27 @@
      <footer>
        <span>关于我们: <a href="http://www.dreamaking.net" target="_blank">www.dreamaking.net</a></span>
      </footer>
+
+      <!-- 免责遮罩层 -->
+      <div id="loginMask" v-if="loginMask">
+          <div class="responsibility">
+            <h2>相关条款</h2>
+            <p>
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+              这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明这里是免责条款说明
+            </p>
+            <div class="btns">
+              <button class="disagree" @click="disagree">不同意</button>
+              <button class="agree" @click="agree" :class="{active:isActive}">同意<span v-show="isActive">({{tCount}}s)</span></button>
+            </div>
+            
+          </div>
+      </div>
   </div>
 </template>
 <style>
@@ -68,8 +88,8 @@ export default {
     var validateUsername = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入用户名'));
-      } else if (/^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/.test(value)==false) {
-        callback(new Error('请输入合法的手机号'));
+      // } else if (/^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/.test(value)==false) {
+      //   callback(new Error('请输入合法的手机号'));
       } else {
         callback();
       }
@@ -105,7 +125,9 @@ export default {
           { validator: validateCode, trigger: 'blur' }
         ]
       },
-      fullscreenLoading: false
+      loginMask: false,
+      isActive:true,
+      tCount:9
     }
   },
   methods:{
@@ -115,27 +137,43 @@ export default {
       // console.log(getCookie('user'))
       this.$refs[formName].validate((valid) => {
         if (valid) { //前端验证合法之后
-          this.fullscreenLoading = true;
+          this.loginMask = true;
           setTimeout(() => {
-            this.fullscreenLoading = false;
-            this.$message({
-              showClose: true,
-              message: '啊哦,登录出错了..请稍后重试!',
-              type: 'error'
-            });
-            
-          }, 3000);
+            // this.$message({
+            //   showClose: true,
+            //   message: '啊哦,登录出错了..请稍后重试!',
+            //   type: 'error'
+            // });
+            this.isEnable = true;
+          }, 10000);
+          var timer1 = setInterval(() => {
+            this.tCount -= 1
+            if(this.tCount==0){
+              clearInterval(timer1)
+              this.isActive = false;
+            }
+          },1000)
           
-          setTimeout(() => {
-            //页面跳转
-            this.$router.push({ path: 'index' })
-          },5000)
+            
+          
      
         } else {
           // console.log('error submit!!');
           return false;
         }
       });
+    },
+    agree:function(){
+      if(this.isActive){
+        return false;
+      }else{
+        //页面跳转
+        this.$store.dispatch("setUser",this.loginForm)
+        this.$router.push({ path: 'index' })
+      }
+    },
+    disagree:function(){
+      this.loginMask = false;
     }
    
   }

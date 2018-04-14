@@ -4,7 +4,7 @@
         <li><i @click="goArea"></i><span>地块信息</span><b class="collection"></b></li>
         <li><i></i>地块编号 <span>0xWX4EYEFP1BHQ</span></li>
         <li><i></i>地块类型 <span>大型</span></li>
-        <li><i></i>地块状态 <span>未开拍</span></li>
+        <li><i></i>地块状态 <span>已拍卖</span></li>
         <li><i></i>地块拥有者</li>
       </ul>
       <div class="ground-owner">

@@ -15,9 +15,14 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
-  externals: {
-    'BMap': 'BMap'
-  },  
+  externals:{
+    'BMap': 'BMap',
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'vuex':'Vuex',
+    'axios':'axios'
+    //'vue-i18n':'VueI18n'
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

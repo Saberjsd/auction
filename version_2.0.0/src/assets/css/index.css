@@ -2,12 +2,12 @@
     width: 100%;height: 100%;min-width: 900px;
 }
 #allmap{
-    width: calc(100% - 260px);height: calc(100% - 60px); float: right;margin-left: 320px;
+    width: calc(100% - 260px);height: calc(100% - 60px); float: right;margin-left: 320px;margin-top: 60px;
     z-index: 10 !important;
 }
 .nav{
     height: 60px;width: calc(100% - 390px);position: absolute;top: 75px;left: 300px;min-width: 1100px;
-    box-shadow: 0px 0px 10px 3px #ebebeb;border-radius: 5px;background-color: #ffffff;z-index: 10000;
+    box-shadow:1px 3px 3px rgba(0,0,0,.15);border-radius: 5px;background-color: #ffffff;z-index: 1000;
 }
 .nav-left{
     width: 688px;height: 60px;float: left;display: flex;align-items: center;
@@ -24,6 +24,7 @@
 /* .select-city{text-align: left !important;} */
 .nav-right{
     width: 346px;height: 60px;float: right;display: flex;align-items: center;color: #848484; 
+    justify-content: end;
 }
 .nav-right li.step1{ width: 18px;height: 18px;margin-right: 10px;background-color: #9ac949;}
 .nav-right li.step2{ width: 18px;height: 18px;margin-right: 10px;background-color: #1253fc;}
@@ -33,7 +34,7 @@
 /* 信息窗口 */
 .infoWindow{
     position: absolute;top: 160px;left: 300px;width: 360px;min-height: 200px;background: #ffffff;
-    border-radius: 3px;box-shadow: 0px 0px 10px 3px #ebebeb;z-index: 10000;
+    border-radius: 3px;box-shadow:3px 3px 3px rgba(0,0,0,.15);z-index: 100;
 }
 .info-msg>li{
     width: 100%;height: 50px;border-bottom: 1px solid #e6e6e6;line-height: 50px;color: #848484;font-weight: 300;

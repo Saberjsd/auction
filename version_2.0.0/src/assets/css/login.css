@@ -99,7 +99,7 @@ border: 1px solid #a5a5a5;text-indent: 2em;
 }
 
 /* 登录遮罩 */
-.el-loading-mask{
+/* .el-loading-mask{
   background-color: rgba(0 ,0 ,0 ,.3) ;
 }
 .el-loading-mask p{
@@ -107,7 +107,29 @@ border: 1px solid #a5a5a5;text-indent: 2em;
 }
 .el-loading-mask .path {
   stroke:white ;
+} */
+#loginMask{
+  position: fixed;left: 0;top: 0;right: 0;bottom: 0;background-color: rgba(0 ,0 ,0 ,.5);
+  z-index: 2000;
 }
+.responsibility{
+  width: 1000px;height: 630px;background: #ffffff;border-radius: 3px;position: absolute;
+  left: 50%;margin-left: -500px;top: 50%;margin-top: -315px;
+}
+.responsibility h2{
+  height: 116px;color: #000000;font-weight: bold;line-height: 116px;font-size: 36px;
+}
+.responsibility p{
+  width: 900px;height: 368px;border-radius: 3px;background-color: #f4f4f4;text-indent: 2em;
+  color: #6a6a6a;margin: 0 auto;
+}
+.btns{height: 140px;line-height: 140px;}
+.btns button{width: 200px;height: 60px;border-radius: 5px;border: none;
+  color: #ffffff;font-size: 30px;font-weight: bold;cursor: pointer;outline: none;
+}
+.btns .disagree{background-color: #a1a1a1;margin-right: 120px;}
+.btns .agree{background-color: #4284f7;}
+.btns .agree.active{cursor: no-drop;}
 
 footer{
   margin-top:40px;padding-top:11px;text-align:right;color:#a5a5a5;

@@ -1,17 +1,17 @@
 <template>
   <div class="sidebar">
     <ul class="sidebar-ul" @click="chageActive">
-      <li :class="{active:isActive == '1'}">
-        <a href="#" id="1"><i class="li-left"></i>参与拍卖</a>
+      <li :class="{active:isActive == '01'}">
+        <a href="#" id="01"><i class="li-left"></i>参与拍卖</a>
       </li>
-      <li :class="{active:isActive == '2'}">
-        <a href="#" id="2"><i class="li-left"></i>我的收藏</a>
+      <li :class="{active:isActive == '02'}">
+        <a href="#" id="02"><i class="li-left"></i>我的收藏</a>
       </li>
-      <li :class="{active:isActive == '3'}">
-        <a href="#" id="3"><i class="li-left"></i>我的地块</a>
+      <li :class="{active:isActive == '03'}">
+        <a href="#" id="03"><i class="li-left"></i>我的地块</a>
       </li>
-      <li :class="{active:isActive == '4'}">
-        <a href="#" id="4"><i class="li-left"></i>交易记录</a>
+      <li :class="{active:isActive == '04'}">
+        <a href="#" id="04"><i class="li-left"></i>交易记录</a>
       </li>
     </ul>
   </div>
@@ -22,7 +22,7 @@ export default {
   name: 'Sidebar',
   data () {
     return {
-      isActive:1
+      isActive:'01'
     }
   },
   methods:{
@@ -30,6 +30,7 @@ export default {
       if(e.target.nodeName =='A'){
         this.isActive = e.target.id
         // console.log(e.target)
+        this.$emit('chageSidebar',e.target.id)
       }
     }
   }
@@ -39,7 +40,7 @@ export default {
 <style scoped>
 .sidebar{
   float: left;width: 260px;position: absolute;top: 0; height: calc(100% - 60px);margin-top: 60px;
-  background-color: #ffffff;box-shadow: 0px 6px 10px 3px #ebebeb;
+  background-color: #ffffff;box-shadow:3px 1px 3px rgba(0,0,0,.15);z-index: 1000;
 }
 .sidebar-ul{
   margin-top: 75px;font-size: 24px;

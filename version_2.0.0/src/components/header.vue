@@ -1,11 +1,13 @@
 <template>
   <div class="index-header">
+
     <div class="index-header-logo">
       <a href="#/index">
           <img src="~assets/img/logo.png" alt="">
           <span>DREAM WORLD</span>
       </a>  
     </div>
+    {{$store.state.user.username}}--{{$store.state.user.passwd}}--{{$store.state.user.code}}
 
     <div class="header-right">
       <a href="" class="exit">
@@ -21,7 +23,7 @@
       <div class="span"></div>
       <div class="user-info">
         HELLO,
-        <span>183****4512</span>
+        <span>16351351351</span>
       </div>
     </div> 
 
@@ -43,8 +45,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .index-header{
-  width: 100%;height: 60px;background: #ffffff;line-height: 60px;
-  box-shadow: 0px 0px 10px 4px #ebebeb;z-index: 10000;float: left;
+  width: 100%;height: 60px;background: #ffffff;line-height: 60px;position: absolute;
+  box-shadow:1px 3px 3px rgba(0,0,0,.15);z-index: 10000;float: left;
 }
 .index-header-logo{
   height: 60px;width: 260px;background: #4284f7;float: left;
