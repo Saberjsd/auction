@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     chageGroundStep:function(){
-      this.$emit('chageGroundStep','3')
+      // this.$emit('chageGroundStep','3')
     }
   }
 }

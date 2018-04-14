@@ -24,7 +24,8 @@ export default {
   },
   methods:{
     goArea:function(){
-      this.$emit('goArea','1')
+      // this.$emit('goArea','1')
+      this.$store.dispatch('setAreaIn',true)
     }
   }
 }

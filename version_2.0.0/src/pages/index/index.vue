@@ -2,10 +2,10 @@
   <div class="wrap">
     <Headers>
     </Headers>
-    <Sidebar @chageSidebar="chageSidebar">
+    <Sidebar>
     </Sidebar>
     <div id="allmap">
-      
+
     </div> 
     <div class="nav">
       <div class="nav-left">
@@ -20,7 +20,7 @@
         <img src="~assets/icons/icon-list-right.png">
         <el-input class="search-map" placeholder="请输入地块编号" v-model="search" clearable></el-input>
       </div>
-      <template v-if="siderbars != '04'">
+      <template v-if="$store.state.siderbars != '04'">
         <div class="nav-right">
           <li class="step1"></li>
           <li class="step-text">未开拍</li>
@@ -30,7 +30,7 @@
           <li class="step-text">已拍完</li>
         </div>
       </template>
-      <template v-if="siderbars == '04'">
+      <template v-if="$store.state.siderbars == '04'">
         <div class="nav-right">
           <li class="step1"></li>
           <li class="step-text">待支付</li>
@@ -40,12 +40,12 @@
       </template>
     </div>
 
-    <AreaIn v-show="siderbars=='01' && areaIn" :areaIn="areaIn" @chageGroundStep="chageGroundStep"></AreaIn>
-    <GroundStep1 v-show="groundIn && groundStep=='1'" @goArea="goArea" :groundIn="groundIn"></GroundStep1>
-    <GroundStep2 v-show="groundIn && groundStep=='2'" @goArea="goArea" :groundIn="groundIn"></GroundStep2>
-    <GroundStep3 v-show="groundIn && groundStep=='3'" @goArea="goArea" :groundIn="groundIn"></GroundStep3>
+    <AreaIn v-show="$store.state.siderbars=='01' && $store.state.areaIn" ></AreaIn>
+    <GroundStep1 v-show="$store.state.groundIn && $store.state.groundStep=='1'" ></GroundStep1>
+    <GroundStep2 v-show="$store.state.groundIn && $store.state.groundStep=='2'" ></GroundStep2>
+    <GroundStep3 v-show="$store.state.groundIn && $store.state.groundStep=='3'" ></GroundStep3>
 
-    <Record v-if="siderbars =='04'" :records="records"></Record>
+    <Record v-if="$store.state.siderbars =='04'"></Record>
   </div>
 </template>
 
@@ -62,12 +62,7 @@ export default {
   name: 'index',
   data () {
     return {
-      groundStep:'1',  //未开拍"1",拍卖中"2",已拍卖"3"
-      areaIn:true, //是否显示区域
-      //{"auction":"01","collection":"02","myGround":"03","record":"04"}
-      siderbars:'01',
-      records:[{gid:'0xmlsdfl1231',status:0}],
-      collections:[{id:'0x123156131FDSV1531'}],
+      
             
       citys: [{value: '1',label: '纽约'}, 
               {value: '2',label: '乌鲁木齐'},
@@ -77,7 +72,7 @@ export default {
               {value: '2',label: '华尔街'}, 
               {value: '3',label: '曼哈顿'}],
       avalue: '1',
-      search:'',
+      search:'', //搜索框的
       priceList:[
         {uid:5,uname:'Tom',price:'22000',time:'2018/4/9 9:26:73'},
         {uid:4,uname:'Kaite',price:'21000',time:'2018/4/9 9:25:45'},
@@ -87,29 +82,18 @@ export default {
       ]
     }
   },
-  computed:{
-    groundIn:function(){
-      if(this.siderbars == "01"){
-        return !this.areaIn
-      }
-      if(this.siderbars == "02"||this.siderbars == "03"){
-        return true;
-      }
-    }
-  },
   methods:{
-    
-    chageGroundStep:function(msg){
-      // console.log(msg)
-      this.areaIn = false;
-      this.groundStep = msg
-    },
-    goArea:function(msg){
-      this.areaIn = true;
-    },
-    chageSidebar:function(msg){
-      this.siderbars = msg
-    },
+    // chageGroundStep:function(msg){
+    //   // console.log(msg)
+    //   this.areaIn = false;
+    //   this.groundStep = msg
+    // },
+    // goArea:function(msg){
+    //   this.areaIn = true;
+    // },
+    // chageSidebar:function(msg){
+    //   this.siderbars = msg
+    // },
     map_init:function(){
       var vthis = this;
       var map = new BMap.Map('allmap', { enableMapClick: false });

@@ -7,7 +7,7 @@
           <span>DREAM WORLD</span>
       </a>  
     </div>
-    {{$store.state.user.username}}--{{$store.state.user.passwd}}--{{$store.state.user.code}}
+    <!-- {{$store.state.user.username}}{{$store.state.user.passwd}}{{$store.state.user.code}} -->
 
     <div class="header-right">
       <a href="" class="exit">
@@ -46,7 +46,7 @@ export default {
 <style scoped>
 .index-header{
   width: 100%;height: 60px;background: #ffffff;line-height: 60px;position: absolute;
-  box-shadow:1px 3px 3px rgba(0,0,0,.15);z-index: 10000;float: left;
+  box-shadow:1px 3px 3px rgba(0,0,0,.15);z-index: 10000;float: left;min-width: 900px;
 }
 .index-header-logo{
   height: 60px;width: 260px;background: #4284f7;float: left;
@@ -62,7 +62,7 @@ export default {
 }
 /* 右部 */
 .header-right{
-  float: right;height: 60px;color: #666;width: 564px;
+  float: right;height: 60px;color: #666;min-width: 600px;
 }
 .header-right>a,.header-right>div{
   float: right;color: #666;
