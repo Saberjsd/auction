@@ -30,9 +30,9 @@ export default {
       if(e.target.nodeName =='A'){
         this.isActive = e.target.id
         // console.log(e.target)
-        this.$store.dispatch('setSidebars',e.target.id)
+        this.$store.dispatch('setData',{state:'sidebars',data:e.target.id})
         // console.log(this.$store.state.sidebars)
-        console.log(this.$store.state)
+        console.log(this.$store.getters.currentGround)
       }
     }
   }

@@ -7,6 +7,8 @@ import router from './router'
 
 // import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/base.css';
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 import './assets/css/login.css';
 import './assets/css/index.css';
 import store from './store/index';
@@ -20,7 +22,7 @@ Vue.use(Input);
 Vue.use(Option);
 Vue.use(VueRouter);
 Vue.use(Vuex);
-
+Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.config.productionTip = false
 
 Vue.prototype.$message = Message;
