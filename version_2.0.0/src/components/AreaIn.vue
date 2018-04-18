@@ -12,10 +12,10 @@
       <div class="info-body" v-show="$store.state.groundShowDetail" >
         <ul class="info-msg">
           <li><i></i>区域编号 <span>0x123156131FDS</span></li>
-          <li><i></i>总地块数 <span>100</span></li>
-          <li><i></i>未开拍的地块数 <span>60</span></li>
-          <li><i></i>拍卖中的地块数 <span>30</span></li>
-          <li><i></i>已拍卖的地块数 <span>10</span></li>
+          <li><i></i>总地块数 <span>{{$store.state.areaDatail.landSum}}</span></li>
+          <li><i></i>未开拍的地块数 <span>{{$store.state.areaDatail.unActionCount}}</span></li>
+          <li><i></i>拍卖中的地块数 <span>{{$store.state.areaDatail.actingCount}}</span></li>
+          <li><i></i>已拍卖的地块数 <span>{{$store.state.areaDatail.actedCount}}</span></li>
         </ul>
         <button @click="chageGroundStep">进入该区域</button>
       </div>
@@ -34,9 +34,13 @@ export default {
   },
   methods:{
     chageGroundStep:function(){
+      // debugger;
       this.$emit('goGround','001')
-      this.$store.dispatch('setData',{state:'areaIn',data:false})
+      this.$store.dispatch('setData',{state:'groundIn',data:true})
     }
+  },
+  mounted(){
+    console.log(this.$store.state.areaDatail)
   }
 }
 </script>

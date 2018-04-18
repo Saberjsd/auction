@@ -34,7 +34,7 @@ ul,li{list-style: none;}
 a { text-decoration: none; }
 a:hover { text-decoration: none; }
 .app {
-  font-family: "MicrosoftYaHeiUI",MicrosoftYaHeiUI, Helvetica, Arial, sans-serif;
+  font-family: "Microsoft YaHei" ,"MicrosoftYaHeiUI",MicrosoftYaHeiUI, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

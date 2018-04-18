@@ -1,5 +1,5 @@
 .wrap{
-    width: 100%;height: 100%;min-width: 900px;
+    width: 100%;height: 100%;min-width: 900px;user-select: none;
 }
 #allmap{
     width: calc(100% - 260px);height: calc(100% - 60px); float: right;margin-left: 320px;margin-top: 60px;
@@ -9,6 +9,8 @@
     height: 60px;width: calc(100% - 390px);position: absolute;top: 75px;left: 300px;min-width: 1100px;
     box-shadow:1px 3px 3px rgba(0,0,0,.15);border-radius: 5px;background-color: #ffffff;z-index: 1000;
 }
+.nav .hot-land{color: #666666;display: inline-block;background-color: #f5f5f5;
+    width: 120px;height: 40px;line-height: 40px;}
 .nav-left{
     width: 688px;height: 60px;float: left;display: flex;align-items: center;
 }
@@ -20,6 +22,9 @@
     width: 320px;height: 40px;background-color: #f5f5f5;border: none;border-radius: 2px;
     background: url('~assets/icons/icon-search-map.png') 10px 11px no-repeat #f5f5f5;text-indent: 25px;
 }
+
+/* 弹框 */
+/* .el-messege */
 
 /* .select-city{text-align: left !important;} */
 .nav-right{
@@ -40,20 +45,20 @@
 .info-head{width: 100%;height: 40px; border-bottom: 1px solid #cac9c9;line-height: 40px;text-align: center;}
 .info-head i{
     width: 24px;height: 24px;background: url('~assets/icons/icon-back.png') no-repeat;
-    float: left;margin: 8px 0px 3px 8px;cursor: pointer;background-size: contain;
+    float: left;margin: 8px 0px 3px 19px;cursor: pointer;background-size: contain;
 }
-.info-head span{font-size: 20px;font-weight: 500;cursor: pointer;}
+.info-head span{font-size: 20px;font-weight: 500;cursor: pointer;margin-right: -16px;}
 .info-head em{width: 14px;height: 14px;background: url('~assets/icons/icon-list-down.png') center center no-repeat;
     display: inline-block;cursor: pointer;transition: all .3s ease;}
 .info-head em.active{transform: rotate(-180deg)}
 .collection{
     width: 24px;height: 24px;background: url('~assets/icons/icon-collection.png') no-repeat;
-    float: right;margin: 11px 20px 3px -20px;cursor: pointer;background-size: contain;
+    float: right;margin: 11px 20px 3px -1px;cursor: pointer;background-size: contain;
 }
 .collection.active{background-image: url('~assets/icons/icon-collection-active.png')}
 .go-land{
     background: url('~assets/icons/icon-back.png') no-repeat;transform: rotate(180deg);cursor: pointer;
-    width: 24px;height: 24px;background-size: contain;float: right;margin: 8px 20px 0px -46px;
+    width: 24px;height: 24px;background-size: contain;float: right;margin: 8px 19px 0px -46px;
 }
 
 .info-msg>li{
@@ -67,11 +72,11 @@
 .info-msg>li:nth-of-type(4) i{background-color: #1253fc;}
 .info-msg>li:nth-of-type(5) i{background-color: #ff966d;}
 .info-msg>li span{float: right;margin-right: 20px;color: #4284f7;}
-
+.info-msg>li:first-child span{user-select: text;}
 
 .info-body button{
-    width: 258px;height: 53px;color: #ffffff;border-radius: 2px;background-color: #4284f7;
-    line-height: 53px;border: none;margin: 20px auto;font-size: 24px;outline: none;cursor: pointer;
+    width: 242px;height: 46px;color: #ffffff;border-radius: 2px;background-color: #4284f7;
+    line-height: 46px;border: none;margin: 20px auto;font-size: 24px;outline: none;cursor: pointer;
 }
 
 /* 地块:未开拍 */
@@ -79,25 +84,45 @@
 .info-msg .count-down span{color: #ff966d !important;}
 .info-msg .set-price{border-bottom: none;}
 .info-msg .set-price i{background: #1253fc !important;}
-.input-price{width: 258px;height: 50px;}
-.input-price .el-input__inner{width: 258px;height: 50px;border-color: #aaaaaa;}
+.info-msg .record-id span{user-select: text;}
+
+.input-price{width: 242px;height: 40px;}
+.input-price .el-input__inner{width: 242px;height: 40px;border-color: #aaaaaa;}
 .infoWindow button.set-price-btn{background-color: #b6b6b6 ;cursor: no-drop;}
+
 
 /* 地块:拍卖中 */
 .info-msg .last-price i{background-color: #ff966d !important;}
 .info-msg .last-price {border-bottom: none;}
-.price-count{width: 100%;height: 48px;color: #ff966d;}
+.last-price span{
+    float: right;width: 24px;height: 20px;background: url('~assets/icons/icon-refresh-price.png') no-repeat;
+    background-size: contain;margin: 6px 20px 0 0;cursor: pointer;
+}
+@keyframes rotating{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+.last-price span.active{ animation:rotating 1s linear infinite;cursor: no-drop;}
+.last-price span.delay{background-image: url('~assets/icons/icon-refresh-price-active.png');cursor: no-drop;}
+.last-price b{font-weight: normal;float: right;margin-right: 8px;font-size: 14px;color: #4284f7;}
+
+
+.price-count{width: 100%;height: 28px;color: #ff966d;}
 .price-count span{float: left;margin: 0px 0 0px 40px;}
-.price-list{width: 258px;background-color: #f5f5f5;margin: 0 auto;color: #2f2f2f;
-    font-weight: 200 !important;font-family: MicrosoftYaHeiUI;font-size: 14px;}
+.price-list{width: 242px;background-color: #f5f5f5;margin: 0 auto;color: #2f2f2f;
+    font-weight: 200 !important;font-family: MicrosoftYaHeiUI;font-size: 14px;min-height: 150px;}
 .price-list li::before{content: '';width: 0;height: 0;display: table;clear: both;}
 .price-list li::after{content: '';width: 0;height: 0;display: table;clear: both;}
-.price-list li span:first-child{float: left;margin:5px 0 5px 20px;}
-.price-list li span:last-child{float: right;margin:5px 20px 5px 0px;}
+.price-list li span:first-child{float: left;margin:5px 0 5px 10px;}
+.price-list li span:last-child{float: right;margin:5px 10px 5px 0px;}
 .infoWindow button.set-price-btn.active{background-color: #4284f7;cursor: pointer;}
 
 /* 地块:已拍卖 */
 .ground-owner{
-    width: 258px;height: 50px;background-color: #b6b6b6;border-radius: 2px;margin: 10px auto;
-    color: #ffffff;line-height: 50px;font-size: 30px;
+    height: 50px;width: 256px; background-color: #b6b6b6;border-radius: 2px;margin: 10px auto;
+    color: #ffffff;line-height: 50px;font-size: 12px;user-select: text;
 }
+
+/* 没有收藏交易记录 */
+.no-record img{margin: 30px auto }
+.no-record p{font-size: 18px;color: #848484;margin-bottom: 40px;}

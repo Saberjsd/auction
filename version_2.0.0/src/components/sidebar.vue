@@ -13,6 +13,9 @@
       <li :class="{active:isActive == '04'}">
         <a href="#" id="04"><i class="li-left"></i>交易记录</a>
       </li>
+      <li :class="{active:isActive == '05'}">
+        <a href="#" id="05"><i class="li-left"></i>热门地块</a>
+      </li>
     </ul>
   </div>
 </template>
@@ -32,7 +35,9 @@ export default {
         // console.log(e.target)
         this.$store.dispatch('setData',{state:'sidebars',data:e.target.id})
         // console.log(this.$store.state.sidebars)
-        console.log(this.$store.getters.currentGround)
+        // console.log(this.$store.getters.currentGround)
+        this.$emit('chageSidebar')
+        
       }
     }
   }
@@ -55,15 +60,18 @@ export default {
 .sidebar-ul li:nth-of-type(2) a{ background: url('~assets/icons/icon-siderbar-b.png') 44px center no-repeat;}
 .sidebar-ul li:nth-of-type(3) a{ background: url('~assets/icons/icon-siderbar-c.png') 44px center no-repeat;}
 .sidebar-ul li:nth-of-type(4) a{ background: url('~assets/icons/icon-siderbar-d.png') 44px center no-repeat;}
+.sidebar-ul li:nth-of-type(5) a{ background: url('~assets/icons/icon-siderbar-e.png') 44px center no-repeat;}
 .sidebar-ul li i{float: left;width: 8px;height: 80px;background-color: #ffffff}
 /* .sidebar-ul li:hover i{background-color: #4284f7} */
 .sidebar-ul li:nth-of-type(1):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-a-hover.png')}
 .sidebar-ul li:nth-of-type(2):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-b-hover.png')}
 .sidebar-ul li:nth-of-type(3):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-c-hover.png')}
 .sidebar-ul li:nth-of-type(4):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-d-hover.png')}
+.sidebar-ul li:nth-of-type(5):hover a{color: #4284f7;background-image: url('~assets/icons/icon-siderbar-e-hover.png')}
 .sidebar-ul li.active i{background-color: #4284f7}
 .sidebar-ul li:nth-of-type(1).active a{color: #4284f7;background-color: #e8eeff;background-image: url('~assets/icons/icon-siderbar-a-hover.png')}
 .sidebar-ul li:nth-of-type(2).active a{color: #4284f7;background-color: #e8eeff;background-image: url('~assets/icons/icon-siderbar-b-hover.png')}
 .sidebar-ul li:nth-of-type(3).active a{color: #4284f7;background-color: #e8eeff;background-image: url('~assets/icons/icon-siderbar-c-hover.png')}
 .sidebar-ul li:nth-of-type(4).active a{color: #4284f7;background-color: #e8eeff;background-image: url('~assets/icons/icon-siderbar-d-hover.png')}
+.sidebar-ul li:nth-of-type(5).active a{color: #4284f7;background-color: #e8eeff;background-image: url('~assets/icons/icon-siderbar-e-hover.png')}
 </style>

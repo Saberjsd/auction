@@ -10,7 +10,19 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api': {
+            target: 'http://47.95.238.73:8080/auction/api/', // 你接口的域名
+            // secure: false,
+            changeOrigin: true,
+            pathRewrite:{
+              '^/api':''//这里理解成用‘/api'代替target里面的地址，后面组件中我们掉接口时直接用api代替 
+                   //比如我要调用'http://40.00.100.133:3002/user/login'，直接写‘/api/user/login'即可
+            }
+       
+        }
+    },
+  
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -31,7 +43,7 @@ module.exports = {
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
-    cacheBusting: true,
+    cacheBusting: false,
 
     cssSourceMap: true
   },

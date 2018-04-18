@@ -12,7 +12,9 @@ import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 import './assets/css/login.css';
 import './assets/css/index.css';
 import store from './store/index';
-import { Select,Form,FormItem,Input,Option,Message} from 'element-ui';
+import { Select,Form,FormItem,Input,Option,Message,MessageBox} from 'element-ui';
+import getTime from '@/util/getTime'
+
 
 // Vue.use(ElementUI);
 Vue.use(Select);
@@ -26,8 +28,9 @@ Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.config.productionTip = false
 
 Vue.prototype.$message = Message;
+Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$http = axios;
-
+Vue.config.devtools = true;
 
 /* eslint-disable no-new */
 new Vue({

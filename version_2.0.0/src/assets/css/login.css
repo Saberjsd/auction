@@ -31,9 +31,13 @@ width: 522px;
 float: left;
 }
 .loginBtn{
-width: 522px;height: 73px;border-radius: 5px;border: none;outline: none;
-font-size: 32px;color: #ffffff;cursor: pointer;
+width: 240px;height: 73px;border-radius: 5px;border: none;outline: none;
+font-size: 32px;color: #ffffff;cursor: pointer;float: left;
 background: url('../img/login-btn-bg.png') no-repeat;
+}
+.registerBtn{
+  width: 240px;height: 73px;border-radius: 5px;float: right;font-size: 32px;cursor: pointer;
+  border: 1px solid #4284f7;background: #ffffff;color: #4284f7;line-height: 73px;
 }
 
 /* 间距 */
@@ -44,8 +48,8 @@ background: url('../img/login-btn-bg.png') no-repeat;
   font-size: 18px;padding-top: 8px;
 }
 .loginForm .el-input__inner{
-height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
-border: 1px solid #a5a5a5;text-indent: 2em;
+  height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
+  border: 1px solid #a5a5a5;padding-left: 52px;padding-right: 26px;
 }
 .input-code{width: 300px;float: left;}
 .img-code{width: 206px;height: 73px;border-radius: 5px;float: right;}
@@ -55,16 +59,12 @@ border: 1px solid #a5a5a5;text-indent: 2em;
 .icon-input{
   position: absolute;height: 28px;top: 22px;left: 20px;z-index: 30;
 }
-.icon-input.username{
-  width: 23px;
-}
+
 .icon-input.passwd{
   width: 24px;
 }
-.icon-input.code{
-  width: 20px;left: 22px;
-}
 /* 左边结束 */
+
 /* 右边开始 */
 .content-right{
   float: right;width: 384px;
@@ -121,7 +121,7 @@ border: 1px solid #a5a5a5;text-indent: 2em;
 }
 .responsibility p{
   width: 900px;height: 368px;border-radius: 3px;background-color: #f4f4f4;text-indent: 2em;
-  color: #6a6a6a;margin: 0 auto;
+  color: #6a6a6a;margin: 0 auto;text-align: left;
 }
 .btns{height: 140px;line-height: 140px;}
 .btns button{width: 200px;height: 60px;border-radius: 5px;border: none;
