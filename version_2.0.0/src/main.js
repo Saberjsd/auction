@@ -12,31 +12,50 @@ import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 import './assets/css/login.css';
 import './assets/css/index.css';
 import store from './store/index';
-import { Select,Form,FormItem,Input,Option,Message,MessageBox} from 'element-ui';
+import { Select,Form,FormItem,Input,InputNumber,Option,Message,MessageBox,Button,ButtonGroup,Loading} from 'element-ui';
 import getTime from '@/util/getTime'
+import axios from './axios.config'
 
+import './util/dateF'
+import './util/forbiden'
+import dev from './util/devtool'
 
 // Vue.use(ElementUI);
 Vue.use(Select);
 Vue.use(FormItem);
 Vue.use(Form);
 Vue.use(Input);
+Vue.use(InputNumber);
 Vue.use(Option);
+Vue.use(Button);
+Vue.use(ButtonGroup);
 Vue.use(VueRouter);
-Vue.use(Vuex);
+Vue.use(Loading.directive);
+//Vue.use(Vuex);
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.config.productionTip = false
 
 Vue.prototype.$message = Message;
 Vue.prototype.$confirm = MessageBox.confirm;
-Vue.prototype.$http = axios;
+// Vue.prototype.$http = axios;
+
 Vue.config.devtools = true;
 
 /* eslint-disable no-new */
-new Vue({
+var dd= new Vue({
   el: '#app',
   router,
   store,
   components: { App },
   template: '<App/>'
 })
+axios(Vue,dd);
+dev();
+// window.addEventListener("devtoolschange",function(e){
+//   console.log(e)
+//   if(e.detail.open){
+//     document.getElementById("app").style.display="none";
+//   }else{
+//     document.getElementById("app").style.display="block";
+//   }
+// })

@@ -1,18 +1,55 @@
 <template>
   <div id="app" class="app">
-    <router-view/>
+    <template v-if="isPhone||isltIE9">
+      你的浏览器不支持本网站
+    </template>
+    <template v-else-if="isDebug">
+      为了网站安全,本网站禁止了调试功能
+    </template>
+    <template v-else> 
+          <router-view/>
+    </template>
+
+
   </div>
 </template>
 
 <script>
-import Vue from "vue";
+//import Vue from "vue";
 // import Element from "element-ui";
 // import "element-ui/lib/theme-chalk/index.css";
 
 // Vue.use(Element);
 
+import brower from './util/ieTest'
+
 export default {
-  name: "App"
+  name: "App",
+  data(){
+    return {
+      isPhone:false,
+      isltIE9:false,
+      isDebug:false,
+    }
+  },
+  mounted(){
+        var isPhone= brower.browserRedirect();
+        if(isPhone){
+          this.isPhone=true;
+        }
+        var vthis=this;
+        window.addEventListener("devtoolschange",function(e){
+        if(e.detail.open){
+                    // document.getElementById("app").style.display='none'
+                    vthis.isDebug=true;
+                    // console.log('open');
+        }else{
+          vthis.isDebug=false;
+            // document.getElementById("app").style.display='block'
+            // console.log('close');
+        }
+        })
+  }
 };
 </script>
 
@@ -42,5 +79,12 @@ a:hover { text-decoration: none; }
 }
 
 body,html,.app{width: 100%;height: 100%;}
-
+.el-message{
+    font-size: 18px !important;
+    top: 100px !important;
+    /* padding: 20px 20px !important; */
+  }
+.el-message__content{
+    font-size: 18px !important;
+}
 </style>

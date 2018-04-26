@@ -11,12 +11,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/api': {
-            target: 'http://47.95.238.73:8080/auction/api/', // 你接口的域名
+        '/auction': {
+            // target: 'http://47.95.238.73:8080/auction/', // 接口的域名
+            // target: 'http://192.168.1.19:8080/auction/', // 接口的域名
+             target: 'http://47.91.244.66:88/auction/', // 接口的域名
             // secure: false,
             changeOrigin: true,
             pathRewrite:{
-              '^/api':''//这里理解成用‘/api'代替target里面的地址，后面组件中我们掉接口时直接用api代替 
+              '^/auction':''//这里理解成用‘/api'代替target里面的地址，后面组件中我们掉接口时直接用api代替 
                    //比如我要调用'http://40.00.100.133:3002/user/login'，直接写‘/api/user/login'即可
             }
        
@@ -25,7 +27,7 @@ module.exports = {
   
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '192.168.1.21', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
@@ -54,7 +56,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: 'start',
     assetsPublicPath: './',
 
     /**

@@ -20,7 +20,8 @@ module.exports = {
     'vue': 'Vue',
     'vue-router': 'VueRouter',
     'vuex':'Vuex',
-    'axios':'axios'
+    'axios':'axios',
+    'crypto-js':'CryptoJs',
     //'vue-i18n':'VueI18n'
   },
   output: {

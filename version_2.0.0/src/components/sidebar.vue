@@ -1,20 +1,20 @@
 <template>
   <div class="sidebar">
     <ul class="sidebar-ul" @click="chageActive">
-      <li :class="{active:isActive == '01'}">
+      <li :class="{active:$store.state.sidebars == '01'}">
         <a href="#" id="01"><i class="li-left"></i>参与拍卖</a>
       </li>
-      <li :class="{active:isActive == '02'}">
+      <li :class="{active:$store.state.sidebars == '02'}">
         <a href="#" id="02"><i class="li-left"></i>我的收藏</a>
       </li>
-      <li :class="{active:isActive == '03'}">
+      <li :class="{active:$store.state.sidebars == '03'}">
         <a href="#" id="03"><i class="li-left"></i>我的地块</a>
       </li>
-      <li :class="{active:isActive == '04'}">
-        <a href="#" id="04"><i class="li-left"></i>交易记录</a>
+      <li :class="{active:$store.state.sidebars == '04'}">
+        <a href="#" id="04"><i class="li-left"></i>我的订单</a>
       </li>
-      <li :class="{active:isActive == '05'}">
-        <a href="#" id="05"><i class="li-left"></i>热门地块</a>
+      <li :class="{active:$store.state.sidebars == '05'}">
+        <a href="#" id="05"><i class="li-left"></i>头号领地</a>
       </li>
     </ul>
   </div>
@@ -22,21 +22,22 @@
 
 <script>
 export default {
+  // props:["isActive"],
   name: 'Sidebar',
   data () {
     return {
-      isActive:'01'
+      //isActive:'01'
     }
   },
   methods:{
     chageActive:function(e){
       if(e.target.nodeName =='A'){
-        this.isActive = e.target.id
+        //this.isActive = e.target.id
         // console.log(e.target)
-        this.$store.dispatch('setData',{state:'sidebars',data:e.target.id})
+        // this.$store.dispatch('setData',{state:'sidebars',data:e.target.id})
         // console.log(this.$store.state.sidebars)
         // console.log(this.$store.getters.currentGround)
-        this.$emit('chageSidebar')
+        this.$emit('chageSidebar',e.target.id)
         
       }
     }

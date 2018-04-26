@@ -23,3 +23,5 @@ export function delCookie (name) {
     if (cval != null)
         document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
 };
+
+export const nihao ="0080cdfa4b1"

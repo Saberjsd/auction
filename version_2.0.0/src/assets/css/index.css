@@ -10,14 +10,15 @@
     box-shadow:1px 3px 3px rgba(0,0,0,.15);border-radius: 5px;background-color: #ffffff;z-index: 1000;
 }
 .nav .hot-land{color: #666666;display: inline-block;background-color: #f5f5f5;
-    width: 120px;height: 40px;line-height: 40px;}
+    width: 130px;height: 40px;line-height: 40px;}
 .nav-left{
-    width: 688px;height: 60px;float: left;display: flex;align-items: center;
+    width: 600px;height: 60px;float: left;display: flex;align-items: center;
 }
 .nav-left>div,.nav-left>img{margin-left: 20px;}
 .select-city .el-input__inner,.select-area .el-input__inner{
     width: 120px;height: 40px;text-indent: 0em;border: none;background-color: #f5f5f5;border-radius: 2px;text-align: left;
 }
+.select-area .el-input__inner{width: 170px;}
 .search-map .el-input__inner{
     width: 320px;height: 40px;background-color: #f5f5f5;border: none;border-radius: 2px;
     background: url('~assets/icons/icon-search-map.png') 10px 11px no-repeat #f5f5f5;text-indent: 25px;
@@ -28,18 +29,23 @@
 
 /* .select-city{text-align: left !important;} */
 .nav-right{
-    width: 346px;height: 60px;float: right;display: flex;align-items: center;color: #848484; 
-    justify-content: end;
+    width: 479px;height: 60px;float: right;display: flex;align-items: center;color: #848484; 
+    justify-content: end;text-align: right;
 }
-.nav-right li.step1{ width: 18px;height: 18px;margin-right: 10px;background-color: #9ac949;}
+
+.nav-right li.step1{ width: 18px;height: 18px;margin-right: 10px;background-color: #00FFFF;}
 .nav-right li.step2{ width: 18px;height: 18px;margin-right: 10px;background-color: #1253fc;}
 .nav-right li.step3{ width: 18px;height: 18px;margin-right: 10px;background-color: #ff966d;}
+.nav-right li.step4{ width: 18px;height: 18px;margin-right: 10px;background-color: #d572e6;}
+.nav-right li.paying{ width: 18px;height: 18px;margin-right: 10px;background-color: #1253fc;}
+.nav-right li.payed{ width: 18px;height: 18px;margin-right: 10px;background-color: #ff966d;}
+
 .nav-right li.step-text{margin-right: 40px;}
 .nav-right li:last-child{margin-right: 20px;}
 
 /* 信息窗口 */
 .infoWindow{
-    position: absolute;top: 160px;left: 300px;width: 280px;background: #ffffff;
+    position: absolute;top: 160px;left: 300px;width: 290px;background: #ffffff;
     border-radius: 3px;box-shadow:3px 3px 3px rgba(0,0,0,.15);z-index: 100;transform: all 1s;
 }
 .info-head{width: 100%;height: 40px; border-bottom: 1px solid #cac9c9;line-height: 40px;text-align: center;}
@@ -71,6 +77,8 @@
 .info-msg>li:nth-of-type(3) i{background-color: #9ac949;}
 .info-msg>li:nth-of-type(4) i{background-color: #1253fc;}
 .info-msg>li:nth-of-type(5) i{background-color: #ff966d;}
+.info-msg>li:nth-of-type(6) i{background-color: #ff687a;}
+.info-msg>li:nth-of-type(7) i{background-color: #ff687a;}
 .info-msg>li span{float: right;margin-right: 20px;color: #4284f7;}
 .info-msg>li:first-child span{user-select: text;}
 
@@ -107,14 +115,27 @@
 .last-price b{font-weight: normal;float: right;margin-right: 8px;font-size: 14px;color: #4284f7;}
 
 
-.price-count{width: 100%;height: 28px;color: #ff966d;}
-.price-count span{float: left;margin: 0px 0 0px 40px;}
-.price-list{width: 242px;background-color: #f5f5f5;margin: 0 auto;color: #2f2f2f;
-    font-weight: 200 !important;font-family: MicrosoftYaHeiUI;font-size: 14px;min-height: 150px;}
+.price-count{width: 100%;height: 28px;color: #ff966d; font-size: 16px;text-align: center;}
+.price-count span{float: left;margin: 0px 0 0px 40px;height: 20px;}
+.price-list{width: 252px;background-color: #f5f5f5;margin: 0 auto;color: #848484;user-select: text;
+    font-weight: 200 !important;font-family: MicrosoftYaHeiUI;font-size: 12px;height: 150px;overflow-y: scroll;
+    overflow-x: hidden;
+}
+.price-list::-webkit-scrollbar{width:10px;background-color:#e1e5ea}
+.price-list::-webkit-scrollbar-thumb{background-color:#c3cad4;border-radius:10px;border:2px solid #e1e5ea;}
+.price-list::-webkit-scrollbar-thumb:hover{background-color:#aab1bc;}
+.price-list::-webkit-scrollbar-thumb:active{border:0;border-radius:0;background-color:#aab1bc}
+.price-list::-webkit-scrollbar-thumb:window-inactive{background-color:#aab1bc}
 .price-list li::before{content: '';width: 0;height: 0;display: table;clear: both;}
 .price-list li::after{content: '';width: 0;height: 0;display: table;clear: both;}
-.price-list li span:first-child{float: left;margin:5px 0 5px 10px;}
-.price-list li span:last-child{float: right;margin:5px 10px 5px 0px;}
+.price-list li{height   : 50px;border-bottom: 1px solid #bebdbd;}
+.price-list li.myDDC{color: #d572e6;}
+.price-list li:last-child{border-bottom: none;}
+.price-list li span{ margin: 0px 10px 10px 10px;float: left;} 
+.price-list li span.ddc{color: #333333;font-weight: 500;}    
+.price-list li.myDDC span.ddc{color: #d572e6;}    
+.price-list li span:first-child{float: left;margin:5px 0 5px 0px;}
+.price-list li span:last-child{float: right;margin:0px 10px 10px 0px;}
 .infoWindow button.set-price-btn.active{background-color: #4284f7;cursor: pointer;}
 
 /* 地块:已拍卖 */
@@ -126,3 +147,24 @@
 /* 没有收藏交易记录 */
 .no-record img{margin: 30px auto }
 .no-record p{font-size: 18px;color: #848484;margin-bottom: 40px;}
+
+/* 百度地图label样式 */
+.BMapLabel{
+    border: none !important;border-radius: 3px;background: transparent !important;
+}
+
+.el-loading-mask{
+    background-color: rgba(0 ,0 ,0 ,.3) ;
+  }
+.el-loading-mask p{
+    color: white !important;
+  }
+.el-loading-spinner,.el-loading-text{
+    font-size: 30px !important;
+  }
+.el-loading-spinner i{color: white;}
+.anchorBL{
+    display: none !important;
+}
+
+

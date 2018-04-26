@@ -1,0 +1,149 @@
+body{font-size:18px;}
+.container{height: 100%;}
+.login-header{
+  height: 60px;width: 100%;background: #4284f7;line-height: 60px;color: #ffffff;
+}
+.login-header-logo{
+height: 60px;width: 1200px;margin: 0 auto;
+}
+.login-header-logo img{
+float: left;
+margin: 9px;
+}
+.login-header-logo a{color:#ffffff;}
+.login-header-logo span{
+float: left;
+font-family: Arial-Black;font-size: 18px;font-weight: bold;
+}
+/* content */
+.content,footer{
+width: 1200px;margin: 0 auto;
+}
+.content::after{
+  content: '';display: table;width: 0;height: 0;clear: both;
+}
+.login-text{
+font-size: 40px;color: #2f2f2f;font-weight: 600;
+text-align: left;padding: 80px 0 61px 0;
+}
+
+.loginForm{
+width: 522px;
+float: left;
+}
+.loginBtn{
+width: 240px;height: 73px;border-radius: 5px;border: none;outline: none;
+font-size: 32px;cursor: pointer;float: left;
+/* color: #ffffff; */
+/* background: url('../img/login-btn-bg.png') no-repeat; */
+}
+/* .loginBtn:hover{
+  color: #ffffff;background: url('../img/login-btn-bg.png');
+}
+.loginBtn:active{
+  color: #ffffff !important;background: url('../img/login-btn-bg.png') !important;
+} */
+
+.registerBtn{
+  width: 240px;height: 73px;border-radius: 5px;float: right;font-size: 32px;cursor: pointer;
+  border: 1px solid #4284f7;background: #ffffff;color: #4284f7;line-height: 73px;
+}
+
+/* 间距 */
+.loginForm .el-form-item{
+  height: 73px;margin-bottom: 40px;
+}
+.loginForm .el-form-item__error{
+  font-size: 18px;padding-top: 8px;
+}
+.loginForm .el-input__inner{
+  height: 73px;line-height: 73px;font-size: 18px;border-radius: 5px;
+  border: 1px solid #a5a5a5;padding-left: 52px;padding-right: 26px;
+}
+.input-code{width: 300px;float: left;}
+.img-code{width: 206px;height: 73px;border-radius: 5px;float: right;cursor: pointer;}
+.loginForm .el-form-item{
+  position: relative;
+}
+.icon-input{
+  position: absolute;height: 28px;top: 22px;left: 20px;z-index: 30;
+}
+
+.icon-input.passwd{
+  width: 24px;
+}
+/* 左边结束 */
+
+/* 右边开始 */
+.content-right{
+  float: right;width: 384px;
+}
+.content-right::after{
+  content: '';display: table;width: 0;height: 0;clear: both;
+}
+.content-right p{
+  text-align: left;
+}
+.content-right .questions{
+  font-size: 24px;color: #868686;height: 24px;
+  line-height: 24px;margin-bottom: 20px;
+}
+.content-right .questions i{
+  width: 10px;height: 10px;background: #ff966d;border-radius: 50%;
+  margin-right: 15px;display: inline-block;
+}
+.content-right .dec{
+  font-size: 22px;color: #a5a5a5;font-weight: 200;
+  padding-left: 25px;
+}
+.code-download{
+  width: 160px;float: left;margin-top: 60px;
+}
+.code-download span{
+  font-weight: 200;color: #a5a5a5;
+  position: relative;top: 10px;
+}
+.code-download img:last-child{
+  position: relative;top: 15px;
+}
+
+/* 登录遮罩 */
+.el-loading-mask{
+  background-color: rgba(0 ,0 ,0 ,.3) ;
+}
+.el-loading-mask p{
+  color: white !important;
+}
+.el-loading-mask .path {
+  stroke:white ;
+}
+#loginMask{
+  position: fixed;left: 0;top: 0;right: 0;bottom: 0;background-color: rgba(0 ,0 ,0 ,.5);
+  z-index: 2000;
+}
+.responsibility{
+  width: 1000px;height: 630px;background: #ffffff;border-radius: 3px;position: absolute;
+  left: 50%;margin-left: -500px;top: 50%;margin-top: -315px;
+}
+.responsibility h2{
+  height: 116px;color: #000000;font-weight: bold;line-height: 116px;font-size: 36px;
+}
+.responsibility p{
+  width: 900px;height: 368px;border-radius: 3px;background-color: #f4f4f4;text-indent: 2em;
+  color: #6a6a6a;margin: 0 auto;text-align: left;
+}
+.btns{height: 140px;line-height: 140px;}
+.btns button{width: 200px;height: 60px;border-radius: 5px;border: none;
+  color: #ffffff;font-size: 30px;font-weight: bold;cursor: pointer;outline: none;
+}
+.btns .disagree{background-color: #a1a1a1;margin-right: 120px;}
+.btns .agree{background-color: #4284f7;}
+.btns .agree.active{cursor: no-drop;}
+
+footer{
+  margin-top:40px;padding-top:11px;text-align:right;color:#a5a5a5;
+  background: url('../img/login-bottom.png') left top no-repeat;
+}
+footer a{
+  color:#a5a5a5;text-decoration:none;
+}
